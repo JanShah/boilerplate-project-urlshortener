@@ -19,7 +19,7 @@ app.get("/", function (req, res) {
 
 // Your first API endpoint
 app.get("/api/invalidURL", function (req, res) {
-	res.json({ error: "URL was not found" });
+	res.json({ error: "invalid url" });
 });
 
 app.get("/api/shorturl/:id", function (req, res) {
@@ -47,8 +47,7 @@ app.get("/api/newURL/:id", (req, res) => {
 	const id = req.params.id;
 	res.json({
 		original_url: urls[id],
-		id: id,
-		short_url:"api/shorturl/" + id,
+		short_url: id,
 	});
 });
 
