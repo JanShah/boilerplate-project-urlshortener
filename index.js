@@ -36,7 +36,7 @@ function parseBody(req, res, next) {
 		if (!urls.includes(url.toString())) {
 			urls.push(url.toString());
 			next();
-		} else {
+		} else if (urls.indexOf(url)>-1) {
 			const id = urls.indexOf(url);
 			res.redirect("api/newURL/" + id);
 		}
