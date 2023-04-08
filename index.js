@@ -48,7 +48,7 @@ app.get("/api/newURL/:id", (req, res) => {
 	res.json({
 		original_url: urls[id],
 		id: id,
-		short_url: req.headers.referer + "api/shorturl/" + id,
+		short_url:"api/shorturl/" + id,
 	});
 });
 
